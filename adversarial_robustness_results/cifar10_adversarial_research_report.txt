@@ -1,0 +1,135 @@
+CIFAR-10 ADVERSARIAL ROBUSTNESS RESEARCH
+=================================================================
+
+Dataset: CIFAR-10 test set
+Images per model: 200
+Images per class: 20
+Device: cpu
+Random seed: 42
+
+Attack configurations:
+FGSM epsilons: [0.01568627450980392, 0.03137254901960784, 0.06274509803921569]
+PGD epsilon: 0.03137254901960784
+PGD alpha: 0.00784313725490196
+PGD steps: 10
+
+=================================================================
+EXPERIMENTAL RESULTS
+=================================================================
+
+Model: Custom CNN
+Attack: FGSM
+Epsilon: 0.015686
+Clean accuracy: 75.00%
+Adversarial accuracy: 10.00%
+Attack success rate: 86.67%
+Initially correct images: 150
+Successful attacks: 130
+--------------------------------------------------
+Model: Custom CNN
+Attack: FGSM
+Epsilon: 0.031373
+Clean accuracy: 75.00%
+Adversarial accuracy: 3.00%
+Attack success rate: 96.00%
+Initially correct images: 150
+Successful attacks: 144
+--------------------------------------------------
+Model: Custom CNN
+Attack: FGSM
+Epsilon: 0.062745
+Clean accuracy: 75.00%
+Adversarial accuracy: 3.50%
+Attack success rate: 96.00%
+Initially correct images: 150
+Successful attacks: 144
+--------------------------------------------------
+Model: Custom CNN
+Attack: PGD
+Epsilon: 0.031373
+Clean accuracy: 75.00%
+Adversarial accuracy: 0.50%
+Attack success rate: 99.33%
+Initially correct images: 150
+Successful attacks: 149
+--------------------------------------------------
+Model: ResNet-18
+Attack: FGSM
+Epsilon: 0.015686
+Clean accuracy: 90.00%
+Adversarial accuracy: 12.50%
+Attack success rate: 86.11%
+Initially correct images: 180
+Successful attacks: 155
+--------------------------------------------------
+Model: ResNet-18
+Attack: FGSM
+Epsilon: 0.031373
+Clean accuracy: 90.00%
+Adversarial accuracy: 5.50%
+Attack success rate: 93.89%
+Initially correct images: 180
+Successful attacks: 169
+--------------------------------------------------
+Model: ResNet-18
+Attack: FGSM
+Epsilon: 0.062745
+Clean accuracy: 90.00%
+Adversarial accuracy: 7.00%
+Attack success rate: 92.22%
+Initially correct images: 180
+Successful attacks: 166
+--------------------------------------------------
+Model: ResNet-18
+Attack: PGD
+Epsilon: 0.031373
+Clean accuracy: 90.00%
+Adversarial accuracy: 0.00%
+Attack success rate: 100.00%
+Initially correct images: 180
+Successful attacks: 180
+--------------------------------------------------
+Model: Fine-tuned ResNet-50
+Attack: FGSM
+Epsilon: 0.015686
+Clean accuracy: 91.00%
+Adversarial accuracy: 29.00%
+Attack success rate: 68.13%
+Initially correct images: 182
+Successful attacks: 124
+--------------------------------------------------
+Model: Fine-tuned ResNet-50
+Attack: FGSM
+Epsilon: 0.031373
+Clean accuracy: 91.00%
+Adversarial accuracy: 37.00%
+Attack success rate: 59.34%
+Initially correct images: 182
+Successful attacks: 108
+--------------------------------------------------
+Model: Fine-tuned ResNet-50
+Attack: FGSM
+Epsilon: 0.062745
+Clean accuracy: 91.00%
+Adversarial accuracy: 33.50%
+Attack success rate: 66.48%
+Initially correct images: 182
+Successful attacks: 121
+--------------------------------------------------
+Model: Fine-tuned ResNet-50
+Attack: PGD
+Epsilon: 0.031373
+Clean accuracy: 91.00%
+Adversarial accuracy: 0.00%
+Attack success rate: 100.00%
+Initially correct images: 182
+Successful attacks: 182
+--------------------------------------------------
+
+RESEARCH NOTES
+Attack success rate is calculated among images correctly classified before the attack.
+Adversarial accuracy is calculated over the full selected test sample.
+Perturbations are applied in raw pixel space with values constrained to [0, 1].
+ResNet-50 uses differentiable tensor resizing to 224x224 during attack evaluation.
+These results use a balanced 200-image sample and should not be interpreted as full test-set robustness measurements.
+The experiment evaluates empirical robustness against the specified attacks, not guaranteed robustness against all adversarial attacks.
