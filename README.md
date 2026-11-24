@@ -336,3 +336,78 @@ A second MNIST classifier was developed using a Convolutional Neural Network (CN
 The CNN achieved a 2.27 percentage-point improvement over the original feedforward model.
 
 Saved model: `cnn_mnist_model.pth`
+
+
+## Project 3: CIFAR-10 Image Classification
+
+### Overview
+Developed a Convolutional Neural Network (CNN) using PyTorch to classify colour images into 10 categories using the CIFAR-10 dataset.
+
+### Dataset
+- 50,000 training images
+- 10,000 testing images
+- Image dimensions: 32 × 32 pixels
+- Image channels: RGB
+- 10 object categories
+
+### Model Architecture
+- Convolutional layers: 32, 64 and 128 filters
+- Batch normalization
+- ReLU activation
+- Max pooling
+- Fully connected layer: 256 neurons
+- Dropout: 0.4
+- Output: 10 classes
+
+### Training Configuration
+- Framework: PyTorch
+- Optimizer: Adam
+- Learning rate: 0.001
+- Loss function: CrossEntropyLoss
+- Batch size: 128
+- Epochs: 5
+- Device: CPU
+- Data augmentation: Random crop and horizontal flip
+
+### Training Results
+
+| Epoch | Training Loss |
+|---|---:|
+| 1 | 1.5208 |
+| 2 | 1.1907 |
+| 3 | 1.0648 |
+| 4 | 0.9860 |
+| 5 | 0.9356 |
+
+### Evaluation Results
+
+- Test images: 10,000
+- Correct predictions: 7,240
+- Test accuracy: 72.40%
+
+### Per-Class Accuracy
+
+| Class | Accuracy |
+|---|---:|
+| Airplane | 80.80% |
+| Automobile | 86.50% |
+| Bird | 43.70% |
+| Cat | 58.60% |
+| Deer | 70.60% |
+| Dog | 57.90% |
+| Frog | 78.40% |
+| Horse | 88.50% |
+| Ship | 81.30% |
+| Truck | 77.70% |
+
+### Model File
+`cifar10_model.pth`
+
+### Future Improvements
+- Train for more epochs.
+- Experiment with learning-rate scheduling.
+- Improve animal classification performance.
+- Evaluate deeper CNN architectures.
+- Generate a confusion matrix.
+- Compare precision, recall and F1-score.
+
