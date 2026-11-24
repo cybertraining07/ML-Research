@@ -497,3 +497,46 @@ Improvement: 15.99 percentage points.
 - Compare additional architectures.
 - Evaluate model generalization on unseen data.
 
+## Project 5: CIFAR-10 Research Evaluation and Visualization
+
+### Objective
+Evaluate the trained CIFAR-10 ResNet-18 model using
+classification metrics and visualizations.
+
+### Evaluation Results
+- Dataset: CIFAR-10
+- Test images: 10,000
+- Model: ResNet-18
+- Overall accuracy: 88.39%
+- Macro F1-score: 88.36%
+- Weighted F1-score: 88.36%
+
+### Evaluation Artifacts
+The evaluation script generates:
+
+1. classification_report.txt
+2. cifar10_confusion_matrix.png
+3. cifar10_prediction_examples.png
+4. cifar10_model_comparison.png
+
+### Key Findings
+- Automobile achieved the highest F1-score (95.57%).
+- Cat achieved the lowest F1-score (76.50%).
+- The ResNet-18 model improved accuracy by
+  15.99 percentage points compared with the original CNN.
+
+### Tools and Technologies
+- Python
+- PyTorch
+- Torchvision
+- Scikit-learn
+- Matplotlib
+- NumPy
+
+### Research Skills Demonstrated
+- Deep learning model evaluation
+- Image classification
+- Performance measurement
+- Confusion matrix analysis
+- Precision, recall and F1-score interpretation
+- Research visualization
