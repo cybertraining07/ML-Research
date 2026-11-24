@@ -294,3 +294,45 @@ This project provided practical experience with the machine-learning development
 
 The neural network achieved 96.84% accuracy on the MNIST test
 
+## Experiment 2: Convolutional Neural Network (CNN)
+
+A second MNIST classifier was developed using a Convolutional Neural Network (CNN) with PyTorch.
+
+### CNN Architecture
+- Convolutional layer: 1 input channel, 32 output channels
+- ReLU activation
+- Max pooling
+- Second convolutional layer: 32 to 64 channels
+- Second ReLU activation and max pooling
+- Fully connected layer: 128 neurons
+- Dropout: 0.25
+- Output layer: 10 digit classes
+
+### Training Configuration
+- Dataset: MNIST
+- Optimizer: Adam
+- Learning rate: 0.001
+- Loss function: CrossEntropyLoss
+- Batch size: 64
+- Epochs: 5
+- Hardware: CPU
+
+### Results
+
+| Metric | Result |
+|---|---:|
+| Correct predictions | 9,911 |
+| Test images | 10,000 |
+| Test accuracy | 99.11% |
+| Final training loss | 0.0299 |
+
+### Model Comparison
+
+| Model | Test Accuracy |
+|---|---:|
+| Feedforward Neural Network | 96.84% |
+| Convolutional Neural Network | 99.11% |
+
+The CNN achieved a 2.27 percentage-point improvement over the original feedforward model.
+
+Saved model: `cnn_mnist_model.pth`
