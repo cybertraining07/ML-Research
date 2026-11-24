@@ -1,0 +1,131 @@
+CIFAR-10 MODEL EXPLAINABILITY RESEARCH
+=======================================================
+
+Method: Gradient-weighted Class Activation Mapping
+Dataset: CIFAR-10 test dataset
+Number of images analyzed per model: 6
+
+
+=======================================================
+Custom CNN
+=======================================================
+
+Image index: 0
+Actual class: cat
+Predicted class: cat
+Confidence: 0.6572
+Prediction status: CORRECT
+
+Image index: 1
+Actual class: ship
+Predicted class: ship
+Confidence: 0.9087
+Prediction status: CORRECT
+
+Image index: 2
+Actual class: ship
+Predicted class: ship
+Confidence: 0.5488
+Prediction status: CORRECT
+
+Image index: 3
+Actual class: airplane
+Predicted class: airplane
+Confidence: 0.6044
+Prediction status: CORRECT
+
+Image index: 4
+Actual class: frog
+Predicted class: frog
+Confidence: 0.9836
+Prediction status: CORRECT
+
+Image index: 5
+Actual class: frog
+Predicted class: frog
+Confidence: 0.6841
+Prediction status: CORRECT
+
+=======================================================
+ResNet-18
+=======================================================
+
+Image index: 0
+Actual class: cat
+Predicted class: cat
+Confidence: 0.9888
+Prediction status: CORRECT
+
+Image index: 1
+Actual class: ship
+Predicted class: ship
+Confidence: 0.9998
+Prediction status: CORRECT
+
+Image index: 2
+Actual class: ship
+Predicted class: ship
+Confidence: 0.9721
+Prediction status: CORRECT
+
+Image index: 3
+Actual class: airplane
+Predicted class: ship
+Confidence: 0.8567
+Prediction status: INCORRECT
+
+Image index: 4
+Actual class: frog
+Predicted class: frog
+Confidence: 0.9989
+Prediction status: CORRECT
+
+Image index: 5
+Actual class: frog
+Predicted class: frog
+Confidence: 0.9926
+Prediction status: CORRECT
+
+=======================================================
+Fine-tuned ResNet-50
+=======================================================
+
+Image index: 0
+Actual class: cat
+Predicted class: cat
+Confidence: 0.9849
+Prediction status: CORRECT
+
+Image index: 1
+Actual class: ship
+Predicted class: ship
+Confidence: 1.0000
+Prediction status: CORRECT
+
+Image index: 2
+Actual class: ship
+Predicted class: ship
+Confidence: 1.0000
+Prediction status: CORRECT
+
+Image index: 3
+Actual class: airplane
+Predicted class: airplane
+Confidence: 0.9534
+Prediction status: CORRECT
+
+Image index: 4
+Actual class: frog
+Predicted class: frog
+Confidence: 1.0000
+Prediction status: CORRECT
+
+Image index: 5
+Actual class: frog
+Predicted class: frog
+Confidence: 0.9998
+Prediction status: CORRECT
+
+
+Research note:
+Grad-CAM highlights image regions that contribute to a selected model prediction. These visualizations are qualitative explanations, not proof of causality. Confidence scores are not necessarily calibrated probabilities.

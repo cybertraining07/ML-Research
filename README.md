@@ -644,3 +644,57 @@ The fine-tuned ResNet-50 achieved the highest test accuracy of 89.96%, followed 
 ### Reproducibility
 The evaluation script is available as `cifar10_advanced_evaluation.py`. The pretrained and fine-tuned model checkpoints are retained locally and are not included in the Git repository due to their file sizes.
 
+## Project 8: Model Explainability, Confidence and Uncertainty Analysis
+
+### Overview
+This project investigates model explainability, prediction confidence, probability calibration, and uncertainty using three CIFAR-10 image classification models.
+
+### Models Evaluated
+- Custom CNN
+- ResNet-18
+- Fine-tuned ResNet-50
+
+### Research Techniques
+- Grad-CAM visual explanations
+- Confidence distribution analysis
+- Reliability diagrams
+- Expected Calibration Error (ECE)
+- Predictive entropy
+- Multiclass Brier score
+- High-confidence error detection
+- Low-confidence correct prediction analysis
+
+### Experimental Results
+
+| Metric | Custom CNN | ResNet-18 | Fine-tuned ResNet-50 |
+|---|---:|---:|---:|
+| Accuracy | 72.40% | 88.39% | 89.96% |
+| Average Confidence | 68.75% | 90.32% | 92.48% |
+| ECE | 0.036544 | 0.021931 | 0.025726 |
+| Predictive Entropy | 0.868665 | 0.281236 | 0.212385 |
+| Brier Score | 0.379192 | 0.170210 | 0.146634 |
+
+### Key Findings
+- Fine-tuned ResNet-50 achieved the highest classification accuracy at 89.96%.
+- ResNet-18 achieved the lowest Expected Calibration Error at 0.021931.
+- Fine-tuned ResNet-50 achieved the lowest multiclass Brier score at 0.146634.
+- ResNet-50 produced the lowest mean predictive entropy.
+- High-confidence classification errors demonstrate that strong model confidence does not always guarantee correct predictions.
+
+### Generated Research Outputs
+
+**Grad-CAM**
+- `gradcam_results/cifar10_gradcam_three_model_comparison.png`
+- `gradcam_results/cifar10_gradcam_research_report.txt`
+
+**Confidence and Uncertainty**
+- `confidence_analysis_results/cifar10_confidence_distributions.png`
+- `confidence_analysis_results/cifar10_reliability_diagram.png`
+- `confidence_analysis_results/cifar10_uncertainty_comparison.png`
+- `confidence_analysis_results/cifar10_high_confidence_errors.csv`
+- `confidence_analysis_results/cifar10_confidence_research_report.txt`
+
+### Research Conclusion
+This experiment demonstrates that classification accuracy alone is insufficient for evaluating machine learning reliability. Model explainability, probability calibration, confidence, and uncertainty provide additional information about prediction behavior.
+
+All measurements were obtained using the CIFAR-10 test set and do not guarantee performance on unseen or out-of-distribution data.

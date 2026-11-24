@@ -1,0 +1,55 @@
+CIFAR-10 CONFIDENCE AND UNCERTAINTY ANALYSIS
+=================================================================
+
+Dataset: CIFAR-10 test set
+Test images per model: 10,000
+Confidence threshold: 90%
+Calibration bins: 15
+
+
+=================================================================
+Custom CNN
+=================================================================
+Accuracy: 72.4000%
+Average confidence: 68.7456%
+Average confidence on correct predictions: 76.0910%
+Average confidence on incorrect predictions: 49.4772%
+Expected Calibration Error (ECE): 0.036544
+Mean predictive entropy: 0.868665
+Multiclass Brier score: 0.379192
+High-confidence errors (>=90%): 72
+Low-confidence correct predictions (<=50%): 1136
+
+=================================================================
+ResNet-18
+=================================================================
+Accuracy: 88.3900%
+Average confidence: 90.3195%
+Average confidence on correct predictions: 93.3949%
+Average confidence on incorrect predictions: 66.9051%
+Expected Calibration Error (ECE): 0.021931
+Mean predictive entropy: 0.281236
+Multiclass Brier score: 0.170210
+High-confidence errors (>=90%): 200
+Low-confidence correct predictions (<=50%): 174
+
+=================================================================
+Fine-tuned ResNet-50
+=================================================================
+Accuracy: 89.9600%
+Average confidence: 92.4770%
+Average confidence on correct predictions: 94.9863%
+Average confidence on incorrect predictions: 69.9930%
+Expected Calibration Error (ECE): 0.025726
+Mean predictive entropy: 0.212385
+Multiclass Brier score: 0.146634
+High-confidence errors (>=90%): 208
+Low-confidence correct predictions (<=50%): 106
+
+
+INTERPRETATION NOTES
+Lower ECE indicates closer agreement between confidence and observed accuracy for the chosen bins.
+Lower multiclass Brier score indicates better probability predictions.
+Predictive entropy measures uncertainty in the model's probability distribution. It is not a standalone measure of calibration.
+High-confidence errors identify incorrect predictions made with at least 90% softmax confidence.
+These are test-set measurements. They do not guarantee performance on new or out-of-distribution images.

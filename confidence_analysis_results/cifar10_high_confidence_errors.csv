@@ -1,0 +1,151 @@
+Model,Test_Image_Index,Actual_Class,Predicted_Class,Confidence
+Custom CNN,6381,truck,automobile,0.997623
+Custom CNN,5416,truck,automobile,0.989045
+Custom CNN,3501,truck,automobile,0.984953
+Custom CNN,6439,cat,deer,0.984920
+Custom CNN,8884,airplane,horse,0.979708
+Custom CNN,2226,bird,frog,0.977225
+Custom CNN,3771,bird,airplane,0.975060
+Custom CNN,6832,automobile,truck,0.973858
+Custom CNN,3645,automobile,truck,0.969083
+Custom CNN,9960,bird,airplane,0.967445
+Custom CNN,6188,truck,automobile,0.964534
+Custom CNN,5511,cat,frog,0.963280
+Custom CNN,7068,bird,airplane,0.963154
+Custom CNN,24,dog,deer,0.958635
+Custom CNN,8743,airplane,ship,0.958133
+Custom CNN,6723,dog,horse,0.957798
+Custom CNN,7852,dog,horse,0.957721
+Custom CNN,7112,bird,airplane,0.957119
+Custom CNN,9699,airplane,truck,0.953552
+Custom CNN,7444,truck,automobile,0.952769
+Custom CNN,2532,airplane,automobile,0.952561
+Custom CNN,1325,bird,deer,0.950146
+Custom CNN,7849,bird,airplane,0.944371
+Custom CNN,6979,dog,deer,0.943705
+Custom CNN,5597,cat,ship,0.943375
+Custom CNN,6666,bird,deer,0.942016
+Custom CNN,1382,bird,airplane,0.940099
+Custom CNN,4036,horse,airplane,0.939450
+Custom CNN,6930,bird,airplane,0.939436
+Custom CNN,9805,bird,airplane,0.938908
+Custom CNN,3902,truck,automobile,0.938497
+Custom CNN,5350,truck,automobile,0.936918
+Custom CNN,2405,cat,frog,0.935508
+Custom CNN,2404,airplane,horse,0.935253
+Custom CNN,4801,bird,horse,0.933504
+Custom CNN,7769,deer,horse,0.931051
+Custom CNN,9668,deer,horse,0.931023
+Custom CNN,8901,dog,horse,0.930587
+Custom CNN,8295,cat,airplane,0.930236
+Custom CNN,5292,deer,horse,0.928301
+Custom CNN,7214,cat,dog,0.928230
+Custom CNN,8720,bird,airplane,0.927544
+Custom CNN,1506,dog,horse,0.926279
+Custom CNN,5992,deer,horse,0.923769
+Custom CNN,3171,airplane,automobile,0.923574
+Custom CNN,6522,truck,automobile,0.923102
+Custom CNN,2096,bird,truck,0.922831
+Custom CNN,3962,deer,horse,0.922564
+Custom CNN,6419,truck,ship,0.920937
+Custom CNN,3094,bird,airplane,0.918997
+ResNet-18,5511,cat,frog,0.999641
+ResNet-18,2405,cat,frog,0.998815
+ResNet-18,7068,bird,airplane,0.998699
+ResNet-18,9227,automobile,truck,0.998563
+ResNet-18,4965,cat,deer,0.998458
+ResNet-18,665,ship,airplane,0.997960
+ResNet-18,7311,automobile,truck,0.997858
+ResNet-18,3497,airplane,automobile,0.997088
+ResNet-18,2473,airplane,ship,0.995597
+ResNet-18,4618,cat,frog,0.995375
+ResNet-18,8295,cat,airplane,0.994254
+ResNet-18,6428,dog,frog,0.994174
+ResNet-18,4302,bird,dog,0.994164
+ResNet-18,9982,bird,frog,0.993434
+ResNet-18,7983,frog,ship,0.993293
+ResNet-18,2078,bird,frog,0.993189
+ResNet-18,4251,ship,airplane,0.993151
+ResNet-18,7892,automobile,truck,0.992901
+ResNet-18,2226,bird,frog,0.992672
+ResNet-18,3867,cat,dog,0.992373
+ResNet-18,2128,deer,frog,0.992358
+ResNet-18,1325,bird,deer,0.992335
+ResNet-18,6070,ship,truck,0.992230
+ResNet-18,7839,cat,deer,0.992062
+ResNet-18,3444,airplane,bird,0.991917
+ResNet-18,2705,ship,airplane,0.991794
+ResNet-18,4003,bird,airplane,0.990570
+ResNet-18,7274,automobile,truck,0.990226
+ResNet-18,9040,bird,dog,0.989842
+ResNet-18,6979,dog,deer,0.989513
+ResNet-18,7792,truck,automobile,0.989189
+ResNet-18,3450,truck,automobile,0.988363
+ResNet-18,4784,airplane,ship,0.988331
+ResNet-18,1684,automobile,ship,0.988274
+ResNet-18,456,cat,deer,0.988176
+ResNet-18,1732,truck,automobile,0.987767
+ResNet-18,7797,cat,frog,0.987751
+ResNet-18,8420,cat,frog,0.986652
+ResNet-18,7168,dog,cat,0.986187
+ResNet-18,2767,dog,cat,0.985559
+ResNet-18,1050,cat,airplane,0.985144
+ResNet-18,4066,frog,bird,0.984496
+ResNet-18,2495,truck,ship,0.983651
+ResNet-18,7590,bird,deer,0.983384
+ResNet-18,2542,bird,airplane,0.983040
+ResNet-18,853,truck,automobile,0.982084
+ResNet-18,8576,bird,airplane,0.981706
+ResNet-18,8573,frog,airplane,0.980943
+ResNet-18,4036,horse,airplane,0.979337
+ResNet-18,734,truck,automobile,0.978317
+Fine-tuned ResNet-50,7609,airplane,ship,0.999973
+Fine-tuned ResNet-50,1935,frog,bird,0.999333
+Fine-tuned ResNet-50,1969,automobile,truck,0.999275
+Fine-tuned ResNet-50,9827,deer,bird,0.999102
+Fine-tuned ResNet-50,6877,airplane,ship,0.999053
+Fine-tuned ResNet-50,4931,truck,automobile,0.998899
+Fine-tuned ResNet-50,7590,bird,deer,0.998586
+Fine-tuned ResNet-50,5806,airplane,ship,0.998390
+Fine-tuned ResNet-50,4309,horse,dog,0.998096
+Fine-tuned ResNet-50,2473,airplane,ship,0.997539
+Fine-tuned ResNet-50,4784,airplane,ship,0.997115
+Fine-tuned ResNet-50,4545,cat,deer,0.997094
+Fine-tuned ResNet-50,37,automobile,truck,0.996795
+Fine-tuned ResNet-50,888,airplane,ship,0.996721
+Fine-tuned ResNet-50,1339,dog,horse,0.996524
+Fine-tuned ResNet-50,6860,airplane,bird,0.996127
+Fine-tuned ResNet-50,7638,automobile,ship,0.995938
+Fine-tuned ResNet-50,4926,horse,cat,0.995627
+Fine-tuned ResNet-50,8521,truck,ship,0.995609
+Fine-tuned ResNet-50,4686,airplane,ship,0.995340
+Fine-tuned ResNet-50,5634,deer,bird,0.995336
+Fine-tuned ResNet-50,6257,dog,bird,0.995162
+Fine-tuned ResNet-50,5458,cat,frog,0.993584
+Fine-tuned ResNet-50,66,automobile,ship,0.992906
+Fine-tuned ResNet-50,4965,cat,deer,0.992693
+Fine-tuned ResNet-50,1791,deer,frog,0.992506
+Fine-tuned ResNet-50,6673,deer,frog,0.992216
+Fine-tuned ResNet-50,7769,deer,horse,0.991935
+Fine-tuned ResNet-50,3433,deer,horse,0.991874
+Fine-tuned ResNet-50,8743,airplane,ship,0.991235
+Fine-tuned ResNet-50,5179,dog,cat,0.991202
+Fine-tuned ResNet-50,9145,automobile,truck,0.990774
+Fine-tuned ResNet-50,9227,automobile,truck,0.990201
+Fine-tuned ResNet-50,5511,cat,frog,0.989980
+Fine-tuned ResNet-50,3560,automobile,truck,0.989629
+Fine-tuned ResNet-50,7311,automobile,truck,0.989063
+Fine-tuned ResNet-50,3550,airplane,deer,0.988551
+Fine-tuned ResNet-50,5416,truck,automobile,0.988159
+Fine-tuned ResNet-50,6016,deer,frog,0.988028
+Fine-tuned ResNet-50,7455,automobile,truck,0.987701
+Fine-tuned ResNet-50,9414,dog,cat,0.987634
+Fine-tuned ResNet-50,5520,deer,dog,0.987561
+Fine-tuned ResNet-50,8222,automobile,ship,0.985675
+Fine-tuned ResNet-50,2468,airplane,bird,0.985303
+Fine-tuned ResNet-50,9483,airplane,ship,0.984860
+Fine-tuned ResNet-50,1506,dog,horse,0.984472
+Fine-tuned ResNet-50,6381,truck,automobile,0.983796
+Fine-tuned ResNet-50,3716,cat,frog,0.983023
+Fine-tuned ResNet-50,4964,dog,deer,0.982959
+Fine-tuned ResNet-50,9039,bird,frog,0.981400
