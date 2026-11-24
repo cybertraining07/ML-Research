@@ -411,3 +411,89 @@ Developed a Convolutional Neural Network (CNN) using PyTorch to classify colour 
 - Generate a confusion matrix.
 - Compare precision, recall and F1-score.
 
+
+## Project 4: CIFAR-10 ResNet-18 Image Classification
+
+### Overview
+Improved the original CIFAR-10 image classifier by implementing ResNet-18 using PyTorch.
+
+The experiment evaluates a deeper residual neural network against the original CNN.
+
+### Model Architecture
+- ResNet-18
+- Modified first convolution for 32 × 32 RGB images
+- Removed initial max pooling
+- Final fully connected layer with 10 output classes
+- Residual connections
+
+### Training Configuration
+- Framework: PyTorch
+- Dataset: CIFAR-10
+- Optimizer: SGD
+- Learning rate: 0.1
+- Momentum: 0.9
+- Weight decay: 0.0005
+- Scheduler: CosineAnnealingLR
+- Batch size: 128
+- Epochs: 10
+- Device: CPU
+- Data augmentation: Random crop and horizontal flip
+
+### Training Loss
+
+| Epoch | Training Loss |
+|---|---:|
+| 1 | 1.9960 |
+| 2 | 1.4222 |
+| 3 | 1.1236 |
+| 4 | 0.8799 |
+| 5 | 0.7033 |
+| 6 | 0.5737 |
+| 7 | 0.4813 |
+| 8 | 0.3978 |
+| 9 | 0.3214 |
+| 10 | 0.2761 |
+
+### Evaluation Results
+
+- Test images: 10,000
+- Correct predictions: 8,839
+- Test accuracy: 88.39%
+- Macro precision: 88.36%
+- Macro recall: 88.39%
+- Macro F1-score: 88.36%
+
+### Original CNN vs ResNet-18
+
+| Model | Test Accuracy |
+|---|---:|
+| Original CNN | 72.40% |
+| ResNet-18 | 88.39% |
+
+Improvement: 15.99 percentage points.
+
+### Per-Class F1-Score
+
+| Class | F1-score |
+|---|---:|
+| Airplane | 89.81% |
+| Automobile | 95.57% |
+| Bird | 83.63% |
+| Cat | 76.50% |
+| Deer | 87.31% |
+| Dog | 81.89% |
+| Frog | 90.04% |
+| Horse | 91.34% |
+| Ship | 93.59% |
+| Truck | 93.96% |
+
+### Model File
+`cifar10_resnet18.pth`
+
+### Future Improvements
+- Experiment with longer training schedules.
+- Investigate cat and dog classification errors.
+- Generate visual confusion matrix.
+- Compare additional architectures.
+- Evaluate model generalization on unseen data.
+
