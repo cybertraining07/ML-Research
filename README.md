@@ -540,3 +540,65 @@ The evaluation script generates:
 - Confusion matrix analysis
 - Precision, recall and F1-score interpretation
 - Research visualization
+
+## Project 6: CIFAR-10 Transfer Learning with ResNet-50
+
+### Research Objective
+Investigate transfer learning using pretrained ResNet-50
+and compare frozen feature extraction with partial fine-tuning.
+
+### Experiment 1: Frozen Feature Extraction
+- Architecture: ResNet-50
+- Pretrained weights: ImageNet V2
+- Dataset: CIFAR-10
+- Training images: 50,000
+- Test images: 10,000
+- Epochs: 3
+- Frozen layers: All pretrained layers
+- Trainable layer: Final classification layer
+- Test accuracy: 82.12%
+
+### Experiment 2: Partial Fine-Tuning
+- Architecture: ResNet-50
+- Pretrained weights: Previously trained Experiment 1 checkpoint
+- Dataset: CIFAR-10
+- Epochs: 2
+- Trainable layers: Layer4 and final classification layer
+- Test accuracy: 89.96%
+
+### Experimental Comparison
+
+| Model | Test Accuracy |
+|---|---:|
+| CIFAR-10 CNN | 72.40% |
+| ResNet-18 | 88.39% |
+| ResNet-50 Frozen | 82.12% |
+| ResNet-50 Fine-Tuned | 89.96% |
+
+### Key Findings
+- Partial fine-tuning improved accuracy by 7.84 percentage points
+  compared with frozen feature extraction.
+- Fine-tuned ResNet-50 outperformed ResNet-18 by
+  1.57 percentage points.
+- Adapting pretrained features to the target dataset
+  improved classification performance.
+
+### Technologies
+- Python
+- PyTorch
+- Torchvision
+- ResNet-50
+- ImageNet pretrained weights
+- CIFAR-10
+- Transfer Learning
+- Deep Learning
+
+### Skills Demonstrated
+- Transfer learning
+- Feature extraction
+- Partial fine-tuning
+- Neural network optimization
+- Model evaluation
+- Experimental comparison
+- Research documentation
+
