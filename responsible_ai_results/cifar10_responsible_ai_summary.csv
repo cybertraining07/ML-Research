@@ -1,0 +1,4 @@
+Model,Overall_Accuracy_Percent,Macro_F1_Percent,Mean_Class_Accuracy_Percent,Mean_One_vs_Rest_ECE,Mean_One_vs_Rest_Brier,Worst_Performing_Class,Worst_Class_Accuracy_Percent
+Custom CNN,72.4,72.2375,72.4,0.017528,0.037919,bird,43.7
+ResNet-18,88.39,88.3634,88.39,0.005938,0.017021,cat,75.2
+Fine-tuned ResNet-50,89.96,89.9245,89.96,0.007806,0.014664,cat,80.6

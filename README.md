@@ -912,3 +912,134 @@ The results showed that adversarial training improved resistance to the tested a
 
 The experiments highlight the importance of evaluating both ordinary classification accuracy and adversarial robustness when developing reliable machine learning systems.
 
+---
+
+## Project 11 — Responsible AI, Model Interpretability and Class-wise Bias Analysis
+
+### Project Overview
+
+This project evaluates three CIFAR-10 image classification models from a Responsible AI perspective, focusing on class-wise performance differences, prediction reliability, confidence, and model evaluation transparency.
+
+The objective was to investigate whether models perform consistently across different image categories and how reliably their predicted probabilities correspond to observed outcomes.
+
+**Models evaluated:**
+- Custom CNN
+- ResNet-18
+- Fine-tuned ResNet-50
+
+**Dataset:** CIFAR-10  
+**Evaluation dataset:** Full 10,000-image CIFAR-10 test set  
+**Framework:** PyTorch  
+**Evaluation tools:** Scikit-learn, NumPy, Matplotlib
+
+### Research Objectives
+
+- Evaluate class-wise classification accuracy, precision, recall, and F1-score.
+- Identify the strongest and weakest-performing image categories.
+- Analyze class-wise prediction reliability.
+- Calculate one-vs-rest Expected Calibration Error (ECE).
+- Calculate one-vs-rest Brier scores.
+- Compare confusion matrices across architectures.
+- Investigate performance differences between model architectures.
+- Document limitations and Responsible AI considerations.
+
+### Key Results
+
+| Metric | Custom CNN | ResNet-18 | Fine-tuned ResNet-50 |
+|---|---:|---:|---:|
+| Overall accuracy | 72.40% | 88.39% | 89.96% |
+| Macro F1-score | 72.24% | 88.36% | 89.92% |
+| Mean class accuracy | 72.40% | 88.39% | 89.96% |
+| Mean one-vs-rest ECE | 0.017528 | 0.005938 | 0.007806 |
+| Mean one-vs-rest Brier | 0.037919 | 0.017021 | 0.014664 |
+| Weakest class | Bird | Cat | Cat |
+| Weakest class accuracy | 43.70% | 75.20% | 80.60% |
+
+### Major Research Findings
+
+**1. Overall predictive performance**
+
+Fine-tuned ResNet-50 achieved the highest overall accuracy at 89.96%, followed by ResNet-18 at 88.39%. Both significantly outperformed the Custom CNN at 72.40%.
+
+**2. Class-wise performance differences**
+
+Fine-tuned ResNet-50 achieved the highest class-wise accuracy in eight of the ten CIFAR-10 categories. ResNet-18 performed better on airplane and automobile.
+
+The Custom CNN showed a wider performance gap between its strongest and weakest classes, with bird classification achieving only 43.70% accuracy.
+
+**3. Probability calibration**
+
+ResNet-18 achieved the lowest mean one-vs-rest ECE of 0.005938, indicating the smallest average calibration error under the selected 15-bin evaluation method.
+
+**4. Brier score comparison**
+
+Fine-tuned ResNet-50 achieved the lowest mean one-vs-rest Brier score of 0.014664. This indicates the strongest average probability prediction performance under the class-wise Brier evaluation used in this experiment.
+
+**5. Responsible AI interpretation**
+
+The experiment identifies differences in model performance across image categories. These differences are useful for investigating model reliability, but CIFAR-10 image categories are not demographic or protected groups. Therefore, this experiment does not establish demographic fairness or societal bias.
+
+### Generated Research Artifacts
+
+**Evaluation script**
+- `cifar10_responsible_ai_analysis.py`
+
+**Visualizations**
+- `responsible_ai_results/cifar10_classwise_accuracy.png`
+- `responsible_ai_results/cifar10_classwise_calibration.png`
+- `responsible_ai_results/cifar10_macro_f1_comparison.png`
+
+**Reports and datasets**
+- `responsible_ai_results/cifar10_classwise_results.csv`
+- `responsible_ai_results/cifar10_responsible_ai_summary.csv`
+- `responsible_ai_results/cifar10_responsible_ai_report.txt`
+
+**Confusion matrices**
+- `responsible_ai_results/custom_cnn_confusion_matrix.csv`
+- `responsible_ai_results/resnet_18_confusion_matrix.csv`
+- `responsible_ai_results/fine_tuned_resnet_50_confusion_matrix.csv`
+
+### Research Skills Demonstrated
+
+- Responsible AI evaluation
+- Class-wise model performance analysis
+- Model interpretability concepts
+- Classification metrics and confusion matrices
+- Probability calibration analysis
+- Expected Calibration Error (ECE)
+- Brier score evaluation
+- Model reliability assessment
+- Python and PyTorch research implementation
+- Data visualization and research reporting
+- Experimental methodology and documentation
+
+### Limitations
+
+- Evaluation was conducted using the CIFAR-10 test distribution.
+- Only one trained checkpoint per architecture was evaluated.
+- Results may vary across independent training runs and random seeds.
+- Calibration measurements depend on the selected binning method.
+- Class-wise performance differences do not establish their underlying causes.
+- No out-of-distribution or real-world deployment evaluation was conducted.
+- CIFAR-10 categories do not provide demographic attributes for protected-group fairness analysis.
+- No causal fairness conclusions can be drawn from these experiments.
+
+### Future Research Improvements
+
+- Repeat experiments using multiple random seeds.
+- Investigate distribution shifts and out-of-distribution performance.
+- Apply temperature scaling and compare calibration before and after adjustment.
+- Investigate class-specific data augmentation.
+- Explore additional interpretability techniques.
+- Extend fairness evaluation using datasets with appropriate demographic or group attributes and valid evaluation methods.
+
+### Overall Conclusion
+
+This project demonstrated a practical approach to evaluating machine learning models beyond overall classification accuracy.
+
+The results showed that Fine-tuned ResNet-50 achieved the strongest overall predictive performance and lowest mean one-vs-rest Brier score, while ResNet-18 achieved the lowest mean one-vs-rest ECE.
+
+The class-wise analysis also revealed that model performance varies across image categories, highlighting the importance of evaluating reliability and individual class performance rather than relying exclusively on overall accuracy.
+
+This research contributes to a broader understanding of model evaluation, interpretability, reliability, and responsible machine learning development.
+
