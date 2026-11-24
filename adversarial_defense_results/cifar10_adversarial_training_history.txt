@@ -1,0 +1,8 @@
+
+FGSM DEFENSE TRAINING
+Epoch 1: Loss=2.5506, Accuracy=11.28%
+Epoch 2: Loss=2.2169, Accuracy=16.64%
+
+PGD DEFENSE TRAINING
+Epoch 1: Loss=2.6732, Accuracy=12.41%
+Epoch 2: Loss=2.2220, Accuracy=18.30%

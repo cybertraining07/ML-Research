@@ -1,0 +1,5 @@
+Model,Clean Accuracy (%),FGSM Accuracy (%),FGSM Attack Success Rate (%),PGD Accuracy (%),PGD Attack Success Rate (%)
+Baseline CNN,72.4,3.39,95.37,0.05,99.93
+FGSM Defense,46.5,20.72,62.17,12.65,78.76
+PGD Defense,48.85,19.12,63.36,12.15,77.51
+Mixed FGSM Defense,66.6,20.2,69.95,8.9,86.85

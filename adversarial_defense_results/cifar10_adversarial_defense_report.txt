@@ -1,0 +1,71 @@
+CIFAR-10 ADVERSARIAL DEFENSE RESEARCH
+=======================================================
+
+Device: cpu
+Training sample size: 10000
+Evaluation sample size: 200
+Training epochs: 2
+FGSM epsilon: 0.031373
+PGD training steps: 3
+PGD evaluation steps: 10
+
+EXPERIMENT RESULTS
+-------------------------------------------------------
+
+Model: Baseline CNN
+Attack: Clean
+Clean Accuracy: 75.00%
+Adversarial Accuracy: 75.00%
+Attack Success Rate: 0.00%
+
+Model: Baseline CNN
+Attack: FGSM
+Clean Accuracy: 75.00%
+Adversarial Accuracy: 3.00%
+Attack Success Rate: 96.00%
+
+Model: Baseline CNN
+Attack: PGD
+Clean Accuracy: 75.00%
+Adversarial Accuracy: 0.50%
+Attack Success Rate: 99.33%
+
+Model: FGSM Defended CNN
+Attack: Clean
+Clean Accuracy: 49.00%
+Adversarial Accuracy: 49.00%
+Attack Success Rate: 0.00%
+
+Model: FGSM Defended CNN
+Attack: FGSM
+Clean Accuracy: 49.00%
+Adversarial Accuracy: 20.00%
+Attack Success Rate: 63.27%
+
+Model: FGSM Defended CNN
+Attack: PGD
+Clean Accuracy: 49.00%
+Adversarial Accuracy: 11.00%
+Attack Success Rate: 82.65%
+
+Model: PGD Defended CNN
+Attack: Clean
+Clean Accuracy: 51.00%
+Adversarial Accuracy: 51.00%
+Attack Success Rate: 0.00%
+
+Model: PGD Defended CNN
+Attack: FGSM
+Clean Accuracy: 51.00%
+Adversarial Accuracy: 17.00%
+Attack Success Rate: 66.67%
+
+Model: PGD Defended CNN
+Attack: PGD
+Clean Accuracy: 51.00%
+Adversarial Accuracy: 10.50%
+Attack Success Rate: 81.37%
+
+RESEARCH LIMITATIONS
+-------------------------------------------------------
+The experiment uses a balanced 200-image CIFAR-10 test sample and a randomly selected 10,000-image training subset. Training is limited to two epochs. Results are preliminary and do not establish general adversarial robustness. The same attack settings are used for model comparison, but stronger attacks and additional evaluation are needed.

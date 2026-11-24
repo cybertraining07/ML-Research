@@ -1,0 +1,15 @@
+CIFAR-10 MIXED ADVERSARIAL TRAINING
+==================================================
+
+Training subset: 10000
+Test sample: 200
+Epochs: 5
+FGSM epsilon: 0.031373
+Loss: 0.5 clean + 0.5 adversarial
+
+Clean: Accuracy=67.50%, ASR=0.00%
+FGSM: Accuracy=14.50%, ASR=78.52%
+PGD: Accuracy=5.50%, ASR=91.85%
+
+LIMITATIONS
+This is a preliminary experiment using a 10,000-image training subset and a balanced 200-image test sample. Only FGSM adversarial training was performed. Additional epochs, full test-set evaluation, and stronger adaptive attacks are needed.

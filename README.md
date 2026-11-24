@@ -698,3 +698,217 @@ This project investigates model explainability, prediction confidence, probabili
 This experiment demonstrates that classification accuracy alone is insufficient for evaluating machine learning reliability. Model explainability, probability calibration, confidence, and uncertainty provide additional information about prediction behavior.
 
 All measurements were obtained using the CIFAR-10 test set and do not guarantee performance on unseen or out-of-distribution data.
+
+## Project 9: Adversarial Robustness and Model Security Analysis
+
+### Overview
+Investigated the vulnerability of CIFAR-10 image classification models to adversarial attacks using Fast Gradient Sign Method (FGSM) and Projected Gradient Descent (PGD).
+
+The objective was to measure how small, deliberately crafted image perturbations affect model predictions and compare the adversarial robustness of three trained models.
+
+### Models Evaluated
+- Custom CNN
+- ResNet-18
+- Fine-tuned ResNet-50
+
+### Attack Methods
+
+**FGSM (Fast Gradient Sign Method)**
+- White-box gradient-based attack.
+- Perturbation strengths: 4/255, 8/255 and 16/255.
+
+**PGD (Projected Gradient Descent)**
+- Iterative gradient-based attack.
+- Perturbation strength: 8/255.
+- Step size: 2/255.
+- Iterations: 10.
+- Random initialization.
+
+### Evaluation Configuration
+- Dataset: CIFAR-10
+- Evaluation sample: 200 balanced images.
+- Sampling: First 20 test images from each of the 10 classes.
+- Evaluation device: CPU.
+- Metrics: Clean accuracy, adversarial accuracy and attack success rate.
+
+### Experimental Findings
+
+The following results were obtained using FGSM at 8/255 and PGD at 8/255.
+
+| Model | Clean Accuracy | FGSM Accuracy | PGD Accuracy |
+|---|---:|---:|---:|
+| Custom CNN | 75.00% | 3.00% | 0.50% |
+| ResNet-18 | 90.00% | 5.50% | 0.00% |
+| Fine-tuned ResNet-50 | 91.00% | 37.00% | 0.00% |
+
+### Key Findings
+- All three models experienced substantial accuracy reductions under adversarial attacks.
+- Fine-tuned ResNet-50 retained the highest FGSM adversarial accuracy in this experiment.
+- PGD was particularly effective against the tested models.
+- High clean accuracy did not necessarily indicate strong adversarial robustness.
+
+### Generated Research Artifacts
+- `adversarial_robustness_results/cifar10_adversarial_results.csv`
+- `adversarial_robustness_results/cifar10_adversarial_accuracy_comparison.png`
+- `adversarial_robustness_results/cifar10_adversarial_examples.png`
+- `adversarial_robustness_results/cifar10_adversarial_research_report.txt`
+
+### Research Skills Demonstrated
+- Adversarial machine learning
+- FGSM and PGD implementation
+- White-box security testing
+- Model vulnerability assessment
+- Adversarial accuracy measurement
+- Attack success rate analysis
+- Research documentation and visualization
+
+### Limitations
+The evaluation used a balanced 200-image test sample and a limited set of attack configurations. Results demonstrate empirical robustness under the tested conditions, not universal protection against adversarial attacks.
+
+---
+
+## Project 10: Adversarial Defense and Robust Model Training
+
+### Overview
+Investigated adversarial defense strategies for CIFAR-10 image classification models using adversarial training.
+
+The project explored whether training with adversarial examples could improve model resistance to FGSM and PGD attacks while preserving clean classification accuracy.
+
+### Research Objectives
+- Implement adversarial-only training.
+- Investigate mixed clean and adversarial training.
+- Compare different defense strategies.
+- Measure clean and adversarial classification accuracy.
+- Analyze the trade-off between model accuracy and robustness.
+- Evaluate defended models using a larger test sample.
+
+### Defense Approaches
+
+**Experiment 1: FGSM Adversarial Training**
+- Model: Custom CIFAR-10 CNN.
+- Training samples: 10,000.
+- Epochs: 2.
+- FGSM perturbation: 8/255.
+- Training approach: Adversarial examples only.
+
+**Experiment 2: PGD Adversarial Training**
+- Model: Custom CIFAR-10 CNN.
+- Training samples: 10,000.
+- Epochs: 2.
+- PGD step size: 2/255.
+- Training iterations: 3.
+- Training approach: Adversarial examples only.
+
+**Experiment 3: Mixed Clean and FGSM Adversarial Training**
+- Model: Custom CIFAR-10 CNN.
+- Training samples: 10,000.
+- Epochs: 5.
+- FGSM perturbation: 8/255.
+- Clean/adversarial loss ratio: 50/50.
+- Optimizer: Adam.
+- Learning rate: 0.0002.
+
+The mixed training objective combined clean and adversarial classification losses with equal weighting.
+
+### Initial Defense Evaluation
+
+The first comparison used a balanced 200-image test sample.
+
+| Model | Clean Accuracy | FGSM Accuracy | PGD Accuracy |
+|---|---:|---:|---:|
+| Baseline CNN | 75.00% | 3.00% | 0.50% |
+| FGSM-only Defense | 49.00% | 20.00% | 11.00% |
+| PGD-only Defense | 51.00% | 17.00% | 10.50% |
+| Mixed FGSM Defense | 67.50% | 14.50% | 5.50% |
+
+### Full Defense Evaluation
+
+A further evaluation compared all four models using a larger CIFAR-10 test sample.
+
+**Evaluation configuration**
+- Clean evaluation: 10,000 test images.
+- FGSM evaluation: 10,000 test images.
+- PGD evaluation: 2,000 balanced test images.
+- PGD sampling: 200 images per class.
+- FGSM perturbation: 8/255.
+- PGD perturbation: 8/255.
+- PGD step size: 2/255.
+- PGD iterations: 10.
+
+### Final Evaluation Results
+
+| Model | Clean Accuracy | FGSM Accuracy | FGSM ASR | PGD Accuracy | PGD ASR |
+|---|---:|---:|---:|---:|---:|
+| Baseline CNN | 72.40% | 3.39% | 95.37% | 0.05% | 99.93% |
+| FGSM Defense | 46.50% | 20.72% | 62.17% | 12.65% | 78.76% |
+| PGD Defense | 48.85% | 19.12% | 63.36% | 12.15% | 77.51% |
+| Mixed FGSM Defense | 66.60% | 20.20% | 69.95% | 8.90% | 86.85% |
+
+ASR represents the percentage of initially correctly classified images that became incorrectly classified after an attack.
+
+### Key Research Findings
+
+1. The baseline CNN achieved 72.40% clean accuracy but was highly vulnerable to the tested adversarial attacks.
+
+2. FGSM adversarial training achieved the highest measured adversarial accuracy, reaching 20.72% under FGSM and 12.65% under PGD.
+
+3. PGD adversarial training improved robustness compared with the baseline, although its measured accuracy was slightly below the FGSM defense under these evaluation settings.
+
+4. Mixed adversarial training preserved more clean accuracy, achieving 66.60%, compared with 46.50% for FGSM-only defense and 48.85% for PGD-only defense.
+
+5. The experiments demonstrate a trade-off between clean classification performance and adversarial robustness.
+
+### Generated Research Artifacts
+
+**Adversarial-only training**
+- `adversarial_defense_results/cifar10_adversarial_defense_results.csv`
+- `adversarial_defense_results/cifar10_adversarial_training_history.txt`
+- `adversarial_defense_results/cifar10_adversarial_defense_comparison.png`
+- `adversarial_defense_results/cifar10_adversarial_defense_report.txt`
+
+**Mixed adversarial training**
+- `mixed_adversarial_results/cifar10_mixed_adversarial_results.csv`
+- `mixed_adversarial_results/cifar10_mixed_training_history.txt`
+- `mixed_adversarial_results/cifar10_mixed_adversarial_report.txt`
+- `mixed_adversarial_results/cifar10_mixed_training_accuracy.png`
+
+**Full defense evaluation**
+- `full_defense_evaluation/cifar10_full_defense_results.csv`
+- `full_defense_evaluation/cifar10_full_defense_comparison.png`
+- `full_defense_evaluation/cifar10_full_defense_report.txt`
+
+### Research Skills Demonstrated
+- Adversarial training
+- Robust machine learning
+- FGSM and PGD attack evaluation
+- Model defense implementation
+- Clean and adversarial performance analysis
+- Experimental comparison
+- Attack success rate calculation
+- Research reporting and visualization
+
+### Limitations
+- Adversarial training used a 10,000-image subset of the training dataset.
+- PGD evaluation used a balanced 2,000-image test subset.
+- Clean and FGSM evaluations used the full 10,000-image test set.
+- Each model was evaluated from one training run.
+- Only selected adversarial attacks and configurations were investigated.
+- Empirical robustness does not establish universal protection.
+
+### Future Research Improvements
+- Evaluate defenses using multiple random seeds.
+- Investigate stronger adversarial attacks.
+- Experiment with longer training schedules.
+- Evaluate additional defense techniques.
+- Investigate adaptive attacks against the defended models.
+- Perform full-test-set PGD evaluation.
+- Compare robustness across additional neural network architectures.
+
+### Overall Conclusion
+
+This project demonstrated the implementation and evaluation of adversarial defense strategies for CIFAR-10 image classification.
+
+The results showed that adversarial training improved resistance to the tested attacks compared with the original baseline model. FGSM-only training achieved the strongest measured adversarial accuracy, while mixed training preserved more clean classification performance.
+
+The experiments highlight the importance of evaluating both ordinary classification accuracy and adversarial robustness when developing reliable machine learning systems.
+
