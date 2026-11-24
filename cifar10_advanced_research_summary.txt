@@ -1,0 +1,70 @@
+CIFAR-10 ADVANCED MODEL EVALUATION
+=================================================================
+
+DATASET INFORMATION
+-----------------------------------------------------------------
+Dataset: CIFAR-10
+Test images: 10,000
+Number of classes: 10
+Evaluation device: cpu
+
+OVERALL MODEL PERFORMANCE
+-----------------------------------------------------------------
+CNN: 72.40%
+ResNet-18: 88.39%
+ResNet-50 Fine-tuned: 89.96%
+
+PER-CLASS PERFORMANCE
+-----------------------------------------------------------------
+
+CNN
+Best class: horse (88.50%)
+Weakest class: bird (43.70%)
+airplane: 80.80%
+automobile: 86.50%
+bird: 43.70%
+cat: 58.60%
+deer: 70.60%
+dog: 57.90%
+frog: 78.40%
+horse: 88.50%
+ship: 81.30%
+truck: 77.70%
+
+ResNet-18
+Best class: automobile (96.00%)
+Weakest class: cat (75.20%)
+airplane: 91.20%
+automobile: 96.00%
+bird: 83.00%
+cat: 75.20%
+deer: 86.00%
+dog: 82.50%
+frog: 91.80%
+horse: 90.70%
+ship: 94.20%
+truck: 93.30%
+
+ResNet-50 Fine-tuned
+Best class: ship (96.50%)
+Weakest class: cat (80.60%)
+airplane: 86.00%
+automobile: 92.30%
+bird: 86.80%
+cat: 80.60%
+deer: 89.30%
+dog: 85.50%
+frog: 95.90%
+horse: 92.50%
+ship: 96.50%
+truck: 94.20%
+
+MODEL COMPARISON
+-----------------------------------------------------------------
+Highest accuracy: ResNet-50 Fine-tuned
+Lowest accuracy: CNN
+Accuracy difference: 17.56 percentage points
+
+METHODOLOGICAL NOTE
+-----------------------------------------------------------------
+The CNN and ResNet-18 were trained from scratch using 32x32 CIFAR-10 images. ResNet-50 used ImageNet pretraining, 224x224 image resizing, and partial fine-tuning. Therefore, this comparison evaluates the complete training pipelines and does not isolate architecture as the only experimental variable.

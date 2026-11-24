@@ -602,3 +602,45 @@ and compare frozen feature extraction with partial fine-tuning.
 - Experimental comparison
 - Research documentation
 
+## Project 7: Advanced CIFAR-10 Model Evaluation and Research Analysis
+
+### Objective
+Conduct a comparative evaluation of three deep learning models trained or fine-tuned for CIFAR-10 image classification.
+
+### Models Evaluated
+1. **Custom CNN** — Convolutional neural network trained from scratch.
+2. **ResNet-18** — Modified ResNet-18 architecture trained for CIFAR-10.
+3. **ResNet-50 Fine-tuned** — ImageNet-pretrained ResNet-50 with partial fine-tuning.
+
+### Evaluation Results
+
+| Model | Test Accuracy |
+|---|---:|
+| Custom CNN | 72.40% |
+| ResNet-18 | 88.39% |
+| ResNet-50 Fine-tuned | 89.96% |
+
+### Evaluation Methods
+- Classification reports and precision, recall, and F1-score analysis.
+- Confusion matrix analysis.
+- Per-class accuracy comparison.
+- Correct and incorrect prediction visualization.
+- Overall model accuracy comparison.
+- Consolidated research summary.
+
+### Generated Research Artifacts
+- `cifar10_advanced_classification_reports.txt`
+- `cifar10_three_model_confusion_matrices.png`
+- `cifar10_three_model_per_class_accuracy.png`
+- `cifar10_three_model_comparison.png`
+- `cifar10_three_model_prediction_examples.png`
+- `cifar10_advanced_research_summary.txt`
+
+### Main Finding
+The fine-tuned ResNet-50 achieved the highest test accuracy of 89.96%, followed by ResNet-18 at 88.39% and the custom CNN at 72.40%.
+
+**Research note:** The models use different training approaches and input resolutions. The results therefore compare complete model pipelines rather than isolating architecture as the only variable.
+
+### Reproducibility
+The evaluation script is available as `cifar10_advanced_evaluation.py`. The pretrained and fine-tuned model checkpoints are retained locally and are not included in the Git repository due to their file sizes.
+
